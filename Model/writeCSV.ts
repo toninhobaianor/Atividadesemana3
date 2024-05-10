@@ -5,8 +5,10 @@ const writeCSV = async (filePath: string, data: Data[]): Promise<void> => {
   const csvWriter = createCsvWriter({
     path: filePath,
     header: [
-      { id: 'title', title: 'TÍTULO' },
-      { id: 'value', title: 'VALOR' },
+      { id: 'nome', title: 'nome' },
+      { id: 'valor', title: 'valor' },
+      { id: 'peso', title: 'peso' },
+      { id: 'quantidade', title: 'quantidade' }
     ],
   });
 
