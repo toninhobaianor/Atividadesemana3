@@ -23,7 +23,7 @@ const main = async () =>{
                     quantidade: parseInt(Q,10)
                 }as Data
 
-                adicionarProduto(dados);
+                await adicionarProduto(dados);
                 break;
             case 0:
                 break;

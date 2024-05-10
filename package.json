@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-    "start": "node index.js"
+    "start": "node index.cjs"
   },
   "keywords": [],
   "author": "",
@@ -27,6 +27,6 @@
   "homepage": "https://github.com/toninhobaianor/Atividadesemana3#readme",
   "description": "",
 
-  "type": "module"
+  "type": "commonjs"
 }
 
