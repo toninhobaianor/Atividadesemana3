@@ -1,5 +1,3 @@
-import fs from 'fs';
-import csv from 'csv-parser';
 import { Data } from "../Model/interfaceData";
 import { createObjectCsvWriter as createCsvWriter } from 'csv-writer';
 
