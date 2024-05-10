@@ -14,8 +14,10 @@ const writeCSV = (filePath, data) => __awaiter(void 0, void 0, void 0, function*
     const csvWriter = (0, csv_writer_1.createObjectCsvWriter)({
         path: filePath,
         header: [
-            { id: 'title', title: 'TÍTULO' },
-            { id: 'value', title: 'VALOR' },
+            { id: 'nome', title: 'nome' },
+            { id: 'valor', title: 'valor' },
+            { id: 'peso', title: 'peso' },
+            { id: 'quantidade', title: 'quantidade' }
         ],
     });
     return csvWriter.writeRecords(data);

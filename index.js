@@ -28,7 +28,7 @@ const main = () => __awaiter(void 0, void 0, void 0, function* () {
                     valor: parseFloat(Z),
                     quantidade: parseInt(Q, 10)
                 };
-                (0, controleEstoque_1.adicionarProduto)(dados);
+                yield (0, controleEstoque_1.adicionarProduto)(dados);
                 break;
             case 0:
                 break;

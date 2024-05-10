@@ -3,7 +3,7 @@ import  writeCSV from "../Model/writeCSV";
 import { Data } from "../Model/interfaceData";
 import fs from 'fs';
 
-const filePath = '../atividadesemana3/Model/estoque.csv'
+const filePath = './Model/estoque.csv'
 
 export default new class estoqueServise{
     async criar(data: Data){

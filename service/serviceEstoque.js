@@ -18,7 +18,7 @@ exports.default = new class estoqueServise {
     criar(data) {
         return __awaiter(this, void 0, void 0, function* () {
             try {
-                if (typeof data.nome != 'string' || isNaN(data.peso) || isNaN(data.valor) || isNaN(data.quantidade)) {
+                if (typeof data.nome !== 'string' || isNaN(data.peso) || isNaN(data.valor) || isNaN(data.quantidade)) {
                     throw new Error('Dados Invalidos para o produto');
                 }
                 else {
@@ -26,7 +26,7 @@ exports.default = new class estoqueServise {
                 }
             }
             catch (error) {
-                console.log();
+                console.log(error);
             }
         });
     }
