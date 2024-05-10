@@ -1,11 +1,11 @@
-import { readCSV } from "../Model/readCSV";
-import { writeCSV } from "../Model/writeCSV";
+import  readCSV  from "../Model/readCSV";
+import  writeCSV from "../Model/writeCSV";
 import { Data } from "../Model/interfaceData";
 import fs from 'fs';
 
 const filePath = './Model/estoque.csv'
 
-class estoqueServise{
+export default new class estoqueServise{
     async criar(data: Data){
         try{
             if(typeof data.nome != 'string' || isNaN(data.peso) || isNaN(data.valor) || isNaN(data.quantidade)){
@@ -14,16 +14,9 @@ class estoqueServise{
             else{
                 await writeCSV(filePath,[data]);
             }
-
         }
         catch(error){
-
+            console.log();
         }
     }
 }
-
-module.exports = {
-
-    estoqueServise: estoqueServise
-
-};

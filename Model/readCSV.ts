@@ -12,3 +12,5 @@ export const readCSV = async (filePath: string): Promise<Data[]> => {
         .on('error', (error) => reject(error));
     });
   };
+
+export default readCSV

@@ -3,7 +3,7 @@ import csv from 'csv-parser';
 import { Data } from "../Model/interfaceData";
 import { createObjectCsvWriter as createCsvWriter } from 'csv-writer';
 
-export const writeCSV = async (filePath: string, data: Data[]): Promise<void> => {
+const writeCSV = async (filePath: string, data: Data[]): Promise<void> => {
   const csvWriter = createCsvWriter({
     path: filePath,
     header: [
@@ -14,3 +14,5 @@ export const writeCSV = async (filePath: string, data: Data[]): Promise<void> =>
 
   return csvWriter.writeRecords(data);
 };
+
+export default writeCSV
