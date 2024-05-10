@@ -10,3 +10,12 @@ export async function adicionarProduto(data:Data){
         console.log("Erro ao adicionar produto", error);
     }
 }
+export async function removerProduto(data:Data){
+    try{
+        await estoqueServise.criar(data)
+        console.log("Produto adicionado com sucesso");
+    }
+    catch (error){
+        console.log("Erro ao adicionar produto", error);
+    }
+}
