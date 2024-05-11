@@ -1,4 +1,4 @@
-import { adicionarProduto, listarProdutos } from "../Atividadesemana3/Controllers/controleEstoque"
+import { adicionarProduto, listarProdutos, removerProdutos } from "../Atividadesemana3/Controllers/controleEstoque"
 import { Data } from "../Atividadesemana3/Model/interfaceData";
 
 var loop = 0;
@@ -6,7 +6,7 @@ const main = async () =>{
     while(loop == 0){
 
     const prompt_comand = require('prompt-sync')({sigint: true});
-    var entrada = prompt_comand('Digite a ação desejada:');
+    var entrada = prompt_comand('Digite a ação desejada: ');
     var W = parseInt(entrada,10);
     
         switch(W){
@@ -27,6 +27,11 @@ const main = async () =>{
                 break;
             case 2:
                 await listarProdutos();
+                break;
+            case 3:
+                var name = prompt_comand('Digite o nome do produto que quer remover: ');
+                await removerProdutos(name);
+                break;
             case 0:
                 break;
         }

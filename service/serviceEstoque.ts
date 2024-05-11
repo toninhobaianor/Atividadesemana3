@@ -24,4 +24,12 @@ export default new class estoqueServise{
         const data = await readCSV(filePath);
         console.log('Dados lidos',data);
     }
+
+    async remover(nome: string){
+        const data = await readCSV(filePath);
+        if(data[0].nome == nome){
+            data.splice(data[0].valor,1);
+        }
+        await writeCSV(filePath,[data[0]])
+    }
 }
