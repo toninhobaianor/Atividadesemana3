@@ -12,5 +12,5 @@ export async function adicionarProduto(data:Data){
 }
 
 export async function listarProdutos(){
-    estoqueServise.listar();
+    await estoqueServise.listar();
 }
