@@ -17,7 +17,7 @@ const writeCSV = (filePath, data) => __awaiter(void 0, void 0, void 0, function*
             { id: 'nome', title: 'nome' },
             { id: 'valor', title: 'valor' },
             { id: 'peso', title: 'peso' },
-            { id: 'quantidade', title: 'quantidade' }
+            { id: 'quantidade', title: 'quantidade' },
         ],
     });
     return csvWriter.writeRecords(data);

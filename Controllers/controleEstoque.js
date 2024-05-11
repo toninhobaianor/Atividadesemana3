@@ -18,7 +18,7 @@ function adicionarProduto(data) {
     return __awaiter(this, void 0, void 0, function* () {
         try {
             yield serviceEstoque_1.default.criar(data);
-            console.log("Produto adicionado com sucesso");
+            console.log("Produto adicionado com sucesso.");
         }
         catch (error) {
             console.log("Erro ao adicionar produto", error);
