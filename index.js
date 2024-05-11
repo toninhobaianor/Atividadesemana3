@@ -18,10 +18,10 @@ const main = () => __awaiter(void 0, void 0, void 0, function* () {
         var W = parseInt(entrada, 10);
         switch (W) {
             case 1:
-                var X = prompt_comand('Digite o nome do produto');
-                var Y = prompt_comand('Digite o peso do produto');
-                var Z = prompt_comand('Digite o valor do produto');
-                var Q = prompt_comand('Digite a quantidade do produto');
+                var X = prompt_comand('Digite o nome do produto: ');
+                var Y = prompt_comand('Digite o peso do produto: ');
+                var Z = prompt_comand('Digite o valor do produto: ');
+                var Q = prompt_comand('Digite a quantidade do produto: ');
                 const dados = {
                     nome: X,
                     peso: parseFloat(Y),
@@ -30,6 +30,8 @@ const main = () => __awaiter(void 0, void 0, void 0, function* () {
                 };
                 yield (0, controleEstoque_1.adicionarProduto)(dados);
                 break;
+            case 2:
+                yield (0, controleEstoque_1.listarProdutos)();
             case 0:
                 break;
         }
