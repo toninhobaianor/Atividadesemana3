@@ -12,6 +12,7 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
+const readCSV_1 = __importDefault(require("../Model/readCSV"));
 const writeCSV_1 = __importDefault(require("../Model/writeCSV"));
 const filePath = './Model/estoque.csv';
 exports.default = new class estoqueServise {
@@ -28,6 +29,12 @@ exports.default = new class estoqueServise {
             catch (error) {
                 console.log(error);
             }
+        });
+    }
+    listar() {
+        return __awaiter(this, void 0, void 0, function* () {
+            const data = yield (0, readCSV_1.default)(filePath);
+            console.log(data);
         });
     }
 };

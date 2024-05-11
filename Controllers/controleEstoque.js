@@ -12,7 +12,7 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.adicionarProduto = void 0;
+exports.listarProdutos = exports.adicionarProduto = void 0;
 const serviceEstoque_1 = __importDefault(require("../service/serviceEstoque"));
 function adicionarProduto(data) {
     return __awaiter(this, void 0, void 0, function* () {
@@ -26,3 +26,9 @@ function adicionarProduto(data) {
     });
 }
 exports.adicionarProduto = adicionarProduto;
+function listarProdutos() {
+    return __awaiter(this, void 0, void 0, function* () {
+        serviceEstoque_1.default.listar();
+    });
+}
+exports.listarProdutos = listarProdutos;
