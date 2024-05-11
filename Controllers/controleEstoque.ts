@@ -12,6 +12,5 @@ export async function adicionarProduto(data:Data){
 }
 
 export async function listarProdutos(){
-    const info = estoqueServise.listar();
-    console.log(info);
+    estoqueServise.listar();
 }

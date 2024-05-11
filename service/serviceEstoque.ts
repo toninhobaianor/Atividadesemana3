@@ -22,6 +22,6 @@ export default new class estoqueServise{
 
     async listar(){
         const data = await readCSV(filePath);
-        return data;
+        console.log(data);
     }
 }
