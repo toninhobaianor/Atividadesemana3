@@ -28,7 +28,7 @@ function adicionarProduto(data) {
 exports.adicionarProduto = adicionarProduto;
 function listarProdutos() {
     return __awaiter(this, void 0, void 0, function* () {
-        serviceEstoque_1.default.listar();
+        yield serviceEstoque_1.default.listar();
     });
 }
 exports.listarProdutos = listarProdutos;
