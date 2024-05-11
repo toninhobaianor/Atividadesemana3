@@ -28,8 +28,7 @@ function adicionarProduto(data) {
 exports.adicionarProduto = adicionarProduto;
 function listarProdutos() {
     return __awaiter(this, void 0, void 0, function* () {
-        const info = serviceEstoque_1.default.listar();
-        console.log(info);
+        serviceEstoque_1.default.listar();
     });
 }
 exports.listarProdutos = listarProdutos;

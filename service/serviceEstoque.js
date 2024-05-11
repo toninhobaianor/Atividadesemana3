@@ -34,7 +34,7 @@ exports.default = new class estoqueServise {
     listar() {
         return __awaiter(this, void 0, void 0, function* () {
             const data = yield (0, readCSV_1.default)(filePath);
-            return data;
+            console.log(data);
         });
     }
 };
