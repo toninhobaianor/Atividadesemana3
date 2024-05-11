@@ -10,3 +10,8 @@ export async function adicionarProduto(data:Data){
         console.log("Erro ao adicionar produto", error);
     }
 }
+
+export async function listarProdutos(){
+    const info = estoqueServise.listar();
+    console.log(info);
+}

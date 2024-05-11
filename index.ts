@@ -1,4 +1,4 @@
-import { adicionarProduto } from "../Atividadesemana3/Controllers/controleEstoque"
+import { adicionarProduto, listarProdutos } from "../Atividadesemana3/Controllers/controleEstoque"
 import { Data } from "../Atividadesemana3/Model/interfaceData";
 
 var loop = 0;
@@ -11,10 +11,10 @@ const main = async () =>{
     
         switch(W){
             case 1:
-                var X = prompt_comand('Digite o nome do produto');
-                var Y = prompt_comand('Digite o peso do produto');
-                var Z = prompt_comand('Digite o valor do produto');
-                var Q = prompt_comand('Digite a quantidade do produto');
+                var X = prompt_comand('Digite o nome do produto: ');
+                var Y = prompt_comand('Digite o peso do produto: ');
+                var Z = prompt_comand('Digite o valor do produto: ');
+                var Q = prompt_comand('Digite a quantidade do produto: ');
 
                 const dados = {
                     nome: X,
@@ -25,6 +25,8 @@ const main = async () =>{
 
                 await adicionarProduto(dados);
                 break;
+            case 2:
+                await listarProdutos();
             case 0:
                 break;
         }

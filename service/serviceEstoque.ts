@@ -19,4 +19,9 @@ export default new class estoqueServise{
             console.log(error);
         }
     }
+
+    async listar(){
+        const data = await readCSV(filePath);
+        return data;
+    }
 }
