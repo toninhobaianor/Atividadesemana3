@@ -21,6 +21,8 @@ const main = () => __awaiter(void 0, void 0, void 0, function* () {
         console.log("digite 5 para Calcular o peso total dos Produtos");
         console.log("digite 6 para Calular a media dos valor dos Produtos");
         console.log("digite 7 para Calcular a media dos pesos dos Produtos");
+        console.log("digite 8 para verificar a quantidade total de itens");
+        console.log("digite 9 para verificar a quantidade total de produtos");
         const prompt_comand = require('prompt-sync')({ sigint: true });
         var entrada = prompt_comand('Digite a ação desejada: ');
         var W = parseInt(entrada, 10);
@@ -57,8 +59,16 @@ const main = () => __awaiter(void 0, void 0, void 0, function* () {
             case 7:
                 yield (0, controleEstoque_1.pesoMedio)();
                 break;
+            case 8:
+                yield (0, controleEstoque_1.Totalitens)();
+                break;
+            case 9:
+                yield (0, controleEstoque_1.Totalprodutos)();
+                break;
             case 0:
                 break;
+            default:
+                console.log("não temos esta operação,por favor digite uma valida");
         }
         if (W == 0) {
             loop = 1;

@@ -92,4 +92,20 @@ exports.default = new class estoqueServise {
             return pesotot / data.length;
         });
     }
+    quantidadeItens() {
+        return __awaiter(this, void 0, void 0, function* () {
+            const data = yield (0, readCSV_1.default)(filePath);
+            var itens = 0;
+            for (var i = 0; i < data.length; i++) {
+                itens += data[i].quantidade;
+            }
+            return itens;
+        });
+    }
+    quantidadeProdutos() {
+        return __awaiter(this, void 0, void 0, function* () {
+            const data = yield (0, readCSV_1.default)(filePath);
+            return data.length;
+        });
+    }
 };
