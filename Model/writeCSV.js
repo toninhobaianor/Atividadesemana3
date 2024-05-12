@@ -20,6 +20,6 @@ const writeCSV = (filePath, data) => __awaiter(void 0, void 0, void 0, function*
             { id: 'quantidade', title: 'quantidade' },
         ],
     });
-    return csvWriter.writeRecords(data);
+    yield csvWriter.writeRecords(data);
 });
 exports.default = writeCSV;
