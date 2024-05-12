@@ -80,7 +80,7 @@ exports.default = new class estoqueServise {
             return valortot / data.length;
         });
     }
-    calculamediaPeso() {
+    calculaMediapeso() {
         return __awaiter(this, void 0, void 0, function* () {
             const data = yield (0, readCSV_1.default)(filePath);
             var pesotot = 0;
