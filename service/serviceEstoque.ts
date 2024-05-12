@@ -74,5 +74,18 @@ export default new class estoqueServise{
         return pesotot/data.length;
     }
 
+    async quantidadeItens(){
+        const data = await readCSV(filePath);
+        var itens: number = 0;
+        for(var i = 0;i <data.length;i++){
+            itens += data[i].quantidade;
+        }
+        return itens;
+    }
+
+    async quantidadeProdutos(){
+        const data = await readCSV(filePath);
+        return data.length;
+    }
 
 }
