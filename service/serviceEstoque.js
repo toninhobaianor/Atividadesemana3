@@ -37,4 +37,16 @@ exports.default = new class estoqueServise {
             console.log('Dados lidos', data);
         });
     }
+    remover(nome) {
+        return __awaiter(this, void 0, void 0, function* () {
+            const data = yield (0, readCSV_1.default)(filePath);
+            if (data[0].nome == nome) {
+                const novodata = data.splice(data[0].valor, 1);
+                yield (0, writeCSV_1.default)(filePath, [novodata[0]]);
+            }
+            else {
+                yield (0, writeCSV_1.default)(filePath, [data[0]]);
+            }
+        });
+    }
 };

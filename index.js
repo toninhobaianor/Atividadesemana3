@@ -14,7 +14,7 @@ var loop = 0;
 const main = () => __awaiter(void 0, void 0, void 0, function* () {
     while (loop == 0) {
         const prompt_comand = require('prompt-sync')({ sigint: true });
-        var entrada = prompt_comand('Digite a ação desejada:');
+        var entrada = prompt_comand('Digite a ação desejada: ');
         var W = parseInt(entrada, 10);
         switch (W) {
             case 1:
@@ -32,6 +32,11 @@ const main = () => __awaiter(void 0, void 0, void 0, function* () {
                 break;
             case 2:
                 yield (0, controleEstoque_1.listarProdutos)();
+                break;
+            case 3:
+                var name = prompt_comand('Digite o nome do produto que quer remover: ');
+                yield (0, controleEstoque_1.removerProdutos)(name);
+                break;
             case 0:
                 break;
         }

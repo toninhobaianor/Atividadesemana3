@@ -12,7 +12,7 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.listarProdutos = exports.adicionarProduto = void 0;
+exports.removerProdutos = exports.listarProdutos = exports.adicionarProduto = void 0;
 const serviceEstoque_1 = __importDefault(require("../service/serviceEstoque"));
 function adicionarProduto(data) {
     return __awaiter(this, void 0, void 0, function* () {
@@ -32,3 +32,15 @@ function listarProdutos() {
     });
 }
 exports.listarProdutos = listarProdutos;
+function removerProdutos(nome) {
+    return __awaiter(this, void 0, void 0, function* () {
+        try {
+            yield serviceEstoque_1.default.remover(nome);
+            console.log("Produto removido com sucesso.");
+        }
+        catch (error) {
+            console.log("Erro ao remover produto", error);
+        }
+    });
+}
+exports.removerProdutos = removerProdutos;
