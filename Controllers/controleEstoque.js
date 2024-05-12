@@ -12,7 +12,7 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.pesoTotal = exports.valorTotal = exports.removerProdutos = exports.listarProdutos = exports.adicionarProduto = void 0;
+exports.pesoMedio = exports.valorMedio = exports.pesoTotal = exports.valorTotal = exports.removerProdutos = exports.listarProdutos = exports.adicionarProduto = void 0;
 const serviceEstoque_1 = __importDefault(require("../service/serviceEstoque"));
 function adicionarProduto(data) {
     return __awaiter(this, void 0, void 0, function* () {
@@ -54,7 +54,21 @@ exports.valorTotal = valorTotal;
 function pesoTotal() {
     return __awaiter(this, void 0, void 0, function* () {
         var total = yield serviceEstoque_1.default.calculaPeso();
-        console.log("O valor total dos produtos é:", total);
+        console.log("O peso total dos produtos é:", total);
     });
 }
 exports.pesoTotal = pesoTotal;
+function valorMedio() {
+    return __awaiter(this, void 0, void 0, function* () {
+        var total = yield serviceEstoque_1.default.calculaMediavalor();
+        console.log("O valor da media de valores dos produtos é:", total);
+    });
+}
+exports.valorMedio = valorMedio;
+function pesoMedio() {
+    return __awaiter(this, void 0, void 0, function* () {
+        var total = yield serviceEstoque_1.default.calculaMediapeso();
+        console.log("O valor da media de pesos dos produtos é:", total);
+    });
+}
+exports.pesoMedio = pesoMedio;
