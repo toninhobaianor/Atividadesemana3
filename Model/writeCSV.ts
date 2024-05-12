@@ -12,7 +12,7 @@ const writeCSV = async (filePath: string, data: Data[]): Promise<void> => {
     ],
   });
 
-  return csvWriter.writeRecords(data);
+  await csvWriter.writeRecords(data);
 };
 
 export default writeCSV
