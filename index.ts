@@ -1,4 +1,4 @@
-import { adicionarProduto, listarProdutos, pesoTotal, removerProdutos, valorTotal } from "../Atividadesemana3/Controllers/controleEstoque"
+import { adicionarProduto, listarProdutos, pesoMedio, pesoTotal, removerProdutos, valorMedio, valorTotal } from "../Atividadesemana3/Controllers/controleEstoque"
 import { Data } from "../Atividadesemana3/Model/interfaceData";
 
 var loop = 0;
@@ -10,6 +10,8 @@ const main = async () =>{
     console.log("digite 3 para Remover Produtos");
     console.log("digite 4 para Calular o valor total dos Produtos");
     console.log("digite 5 para Calcular o peso total dos Produtos");
+    console.log("digite 6 para Calular a media dos valor dos Produtos");
+    console.log("digite 7 para Calcular a media dos pesos dos Produtos");
 
     const prompt_comand = require('prompt-sync')({sigint: true});
     var entrada = prompt_comand('Digite a ação desejada: ');
@@ -43,6 +45,12 @@ const main = async () =>{
                 break;
             case 5:
                 await pesoTotal();
+                break;
+            case 6:
+                await valorMedio();
+                break;
+            case 7:
+                await pesoMedio();
                 break;
             case 0:
                 break;

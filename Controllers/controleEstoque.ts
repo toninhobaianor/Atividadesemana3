@@ -32,5 +32,15 @@ export async function valorTotal() {
 
 export async function pesoTotal() {
     var total = await estoqueServise.calculaPeso();
-    console.log("O valor total dos produtos é:",total);
+    console.log("O peso total dos produtos é:",total);
+}
+
+export async function valorMedio() {
+    var total = await estoqueServise.calculaMediavalor();
+    console.log("O valor da media de valores dos produtos é:",total);
+}
+
+export async function pesoMedio() {
+    var total = await estoqueServise.calculaMediapeso();
+    console.log("O valor da media de pesos dos produtos é:",total);
 }

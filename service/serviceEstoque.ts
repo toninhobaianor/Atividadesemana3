@@ -63,7 +63,7 @@ export default new class estoqueServise{
         return valortot/data.length;
     }
 
-    async calculamediaPeso(){
+    async calculaMediapeso(){
         const data = await readCSV(filePath);
         var pesotot: number = 0;
         for(var i = 0;i <data.length;i++){
