@@ -22,6 +22,15 @@ export async function removerProdutos(nome:string) {
     }
     catch (error){
         console.log("Erro ao remover produto", error);
-    }
-    
+    } 
+}
+
+export async function valorTotal() {
+    var total = await estoqueServise.calculaValor();
+    console.log("O valor total dos produtos é:",total);
+}
+
+export async function pesoTotal() {
+    var total = await estoqueServise.calculaPeso();
+    console.log("O valor total dos produtos é:",total);
 }

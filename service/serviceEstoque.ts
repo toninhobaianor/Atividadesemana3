@@ -28,8 +28,49 @@ export default new class estoqueServise{
     async remover(nome: string){
         const data = await readCSV(filePath);
         if(data[0].nome == nome){
-            data.splice(data[0].valor,1);
-        }
-        await writeCSV(filePath,[data[0]])
+            const novodata = data.splice(data[0].valor,1);
+            await writeCSV(filePath,[novodata[0]]);
+        }else{
+            await writeCSV(filePath,[data[0]]);
+        }   
     }
+    // não esta funcionando
+
+    async calculaValor(){
+        const data = await readCSV(filePath);
+        var valortot: number = 0;
+        for(var i = 0;i <data.length;i++){
+            valortot += data[i].valor;
+        }
+        return valortot;
+    }
+
+    async calculaPeso(){
+        const data = await readCSV(filePath);
+        var pesotot: number = 0;
+        for(var i = 0;i <data.length;i++){
+            pesotot += data[i].peso;
+        }
+        return pesotot;
+    }
+
+    async calculaMediavalor(){
+        const data = await readCSV(filePath);
+        var valortot: number = 0;
+        for(var i = 0;i <data.length;i++){
+            valortot += data[i].valor;
+        }
+        return valortot/data.length;
+    }
+
+    async calculamediaPeso(){
+        const data = await readCSV(filePath);
+        var pesotot: number = 0;
+        for(var i = 0;i <data.length;i++){
+            pesotot += data[i].peso;
+        }
+        return pesotot/data.length;
+    }
+
+
 }
