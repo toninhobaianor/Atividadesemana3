@@ -13,6 +13,12 @@ const controleEstoque_1 = require("../Atividadesemana3/Controllers/controleEstoq
 var loop = 0;
 const main = () => __awaiter(void 0, void 0, void 0, function* () {
     while (loop == 0) {
+        console.log("digite 0 para sair do Sistema");
+        console.log("digite 1 para Adicionar Produto");
+        console.log("digite 2 para Listar os produtos");
+        console.log("digite 3 para Remover Produtos");
+        console.log("digite 4 para Calular o valor total dos Produtos");
+        console.log("digite 5 para Calcular o peso total dos Produtos");
         const prompt_comand = require('prompt-sync')({ sigint: true });
         var entrada = prompt_comand('Digite a ação desejada: ');
         var W = parseInt(entrada, 10);
@@ -36,6 +42,12 @@ const main = () => __awaiter(void 0, void 0, void 0, function* () {
             case 3:
                 var name = prompt_comand('Digite o nome do produto que quer remover: ');
                 yield (0, controleEstoque_1.removerProdutos)(name);
+                break;
+            case 4:
+                yield (0, controleEstoque_1.valorTotal)();
+                break;
+            case 5:
+                yield (0, controleEstoque_1.pesoTotal)();
                 break;
             case 0:
                 break;

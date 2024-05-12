@@ -12,7 +12,7 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.removerProdutos = exports.listarProdutos = exports.adicionarProduto = void 0;
+exports.pesoTotal = exports.valorTotal = exports.removerProdutos = exports.listarProdutos = exports.adicionarProduto = void 0;
 const serviceEstoque_1 = __importDefault(require("../service/serviceEstoque"));
 function adicionarProduto(data) {
     return __awaiter(this, void 0, void 0, function* () {
@@ -44,3 +44,17 @@ function removerProdutos(nome) {
     });
 }
 exports.removerProdutos = removerProdutos;
+function valorTotal() {
+    return __awaiter(this, void 0, void 0, function* () {
+        var total = yield serviceEstoque_1.default.calculaValor();
+        console.log("O valor total dos produtos é:", total);
+    });
+}
+exports.valorTotal = valorTotal;
+function pesoTotal() {
+    return __awaiter(this, void 0, void 0, function* () {
+        var total = yield serviceEstoque_1.default.calculaPeso();
+        console.log("O valor total dos produtos é:", total);
+    });
+}
+exports.pesoTotal = pesoTotal;
