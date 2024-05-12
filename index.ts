@@ -63,7 +63,7 @@ const main = async () =>{
             case 0:
                 break;
             default:
-                console.log("não temos esta operação,por favor digite uma valida")
+                console.log("não temos esta operação,por favor digite uma valida");
         }
         if(W == 0){
             loop = 1;
