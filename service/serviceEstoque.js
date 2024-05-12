@@ -49,4 +49,45 @@ exports.default = new class estoqueServise {
             }
         });
     }
+    // não esta funcionando
+    calculaValor() {
+        return __awaiter(this, void 0, void 0, function* () {
+            const data = yield (0, readCSV_1.default)(filePath);
+            var valortot = 0;
+            for (var i = 0; i < data.length; i++) {
+                valortot += data[i].valor;
+            }
+            return valortot;
+        });
+    }
+    calculaPeso() {
+        return __awaiter(this, void 0, void 0, function* () {
+            const data = yield (0, readCSV_1.default)(filePath);
+            var pesotot = 0;
+            for (var i = 0; i < data.length; i++) {
+                pesotot += data[i].peso;
+            }
+            return pesotot;
+        });
+    }
+    calculaMediavalor() {
+        return __awaiter(this, void 0, void 0, function* () {
+            const data = yield (0, readCSV_1.default)(filePath);
+            var valortot = 0;
+            for (var i = 0; i < data.length; i++) {
+                valortot += data[i].valor;
+            }
+            return valortot / data.length;
+        });
+    }
+    calculamediaPeso() {
+        return __awaiter(this, void 0, void 0, function* () {
+            const data = yield (0, readCSV_1.default)(filePath);
+            var pesotot = 0;
+            for (var i = 0; i < data.length; i++) {
+                pesotot += data[i].peso;
+            }
+            return pesotot / data.length;
+        });
+    }
 };
