@@ -13,6 +13,7 @@ const controleEstoque_1 = require("../Atividadesemana3/Controllers/controleEstoq
 var loop = 0;
 const main = () => __awaiter(void 0, void 0, void 0, function* () {
     while (loop == 0) {
+        console.log(" ");
         console.log("digite 0 para sair do Sistema");
         console.log("digite 1 para Adicionar Produto");
         console.log("digite 2 para Listar os produtos");
@@ -23,6 +24,7 @@ const main = () => __awaiter(void 0, void 0, void 0, function* () {
         console.log("digite 7 para Calcular a media dos pesos dos Produtos");
         console.log("digite 8 para verificar a quantidade total de itens");
         console.log("digite 9 para verificar a quantidade total de produtos");
+        console.log(" ");
         const prompt_comand = require('prompt-sync')({ sigint: true });
         var entrada = prompt_comand('Digite a ação desejada: ');
         var W = parseInt(entrada, 10);
@@ -33,7 +35,7 @@ const main = () => __awaiter(void 0, void 0, void 0, function* () {
                 var Z = prompt_comand('Digite o valor do produto: ');
                 var Q = prompt_comand('Digite a quantidade do produto: ');
                 const dados = {
-                    nome: X,
+                    nome: String(X),
                     peso: parseFloat(Y),
                     valor: parseFloat(Z),
                     quantidade: parseInt(Q, 10)

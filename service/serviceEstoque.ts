@@ -30,6 +30,7 @@ export default new class estoqueServise{
         for(var i = 0;i < data.length;i++){
             if(data[i].nome == nome){
                 const novodata = data.splice(data[i].valor,1);
+                console.log(novodata);
                 await writeCSV(filePath,[novodata[i]]);
             }else{
                 await writeCSV(filePath,[data[i]]);
@@ -39,10 +40,14 @@ export default new class estoqueServise{
     // não esta funcionando
 
     async calculaValor(){
+        //const data = await readCSV(filePath);
+        //return data.reduce((acc,data) => acc + data.valor, 0);
         const data = await readCSV(filePath);
         var valortot: number = 0;
-        for(var i = 0;i <data.length;i++){
-            valortot += data[i].valor;
+        var aux;
+        for(var i = 0;i < data.length;i++){
+            aux = Number(data[i].valor);
+            valortot = valortot + aux;
         }
         return valortot;
     }
@@ -51,7 +56,7 @@ export default new class estoqueServise{
         const data = await readCSV(filePath);
         var pesotot: number = 0;
         for(var i = 0;i <data.length;i++){
-            pesotot += data[i].peso;
+            pesotot += Number(data[i].peso);
         }
         return pesotot;
     }
@@ -60,7 +65,7 @@ export default new class estoqueServise{
         const data = await readCSV(filePath);
         var valortot: number = 0;
         for(var i = 0;i <data.length;i++){
-            valortot += data[i].valor;
+            valortot += Number(data[i].valor);
         }
         return valortot/data.length;
     }
@@ -69,7 +74,7 @@ export default new class estoqueServise{
         const data = await readCSV(filePath);
         var pesotot: number = 0;
         for(var i = 0;i <data.length;i++){
-            pesotot += data[i].peso;
+            pesotot += Number(data[i].peso);
         }
         return pesotot/data.length;
     }
@@ -78,7 +83,7 @@ export default new class estoqueServise{
         const data = await readCSV(filePath);
         var itens: number = 0;
         for(var i = 0;i <data.length;i++){
-            itens += data[i].quantidade;
+            itens += Number(data[i].quantidade);
         }
         return itens;
     }

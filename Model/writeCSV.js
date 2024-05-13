@@ -8,18 +8,23 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
         step((generator = generator.apply(thisArg, _arguments || [])).next());
     });
 };
+var __importDefault = (this && this.__importDefault) || function (mod) {
+    return (mod && mod.__esModule) ? mod : { "default": mod };
+};
 Object.defineProperty(exports, "__esModule", { value: true });
 const csv_writer_1 = require("csv-writer");
+const fs_1 = __importDefault(require("fs"));
 const writeCSV = (filePath, data) => __awaiter(void 0, void 0, void 0, function* () {
     const csvWriter = (0, csv_writer_1.createObjectCsvWriter)({
         path: filePath,
         header: [
-            { id: 'nome', title: 'nome' },
-            { id: 'valor', title: 'valor' },
-            { id: 'peso', title: 'peso' },
-            { id: 'quantidade', title: 'quantidade' },
+            { id: "nome", title: "nome" },
+            { id: "valor", title: "valor" },
+            { id: "peso", title: "peso" },
+            { id: "quantidade", title: "quantidade" },
         ],
+        append: fs_1.default.existsSync(filePath),
     });
-    yield csvWriter.writeRecords(data);
+    return csvWriter.writeRecords(data);
 });
 exports.default = writeCSV;

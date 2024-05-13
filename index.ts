@@ -29,7 +29,7 @@ const main = async () =>{
                     var Q = prompt_comand('Digite a quantidade do produto: ');
 
                     const dados = {
-                        nome: X,
+                        nome: String(X),
                         peso: parseFloat(Y),
                         valor: parseFloat(Z),
                         quantidade: parseInt(Q,10)

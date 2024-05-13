@@ -43,6 +43,7 @@ exports.default = new class estoqueServise {
             for (var i = 0; i < data.length; i++) {
                 if (data[i].nome == nome) {
                     const novodata = data.splice(data[i].valor, 1);
+                    console.log(novodata);
                     yield (0, writeCSV_1.default)(filePath, [novodata[i]]);
                 }
                 else {
@@ -54,10 +55,14 @@ exports.default = new class estoqueServise {
     // não esta funcionando
     calculaValor() {
         return __awaiter(this, void 0, void 0, function* () {
+            //const data = await readCSV(filePath);
+            //return data.reduce((acc,data) => acc + data.valor, 0);
             const data = yield (0, readCSV_1.default)(filePath);
             var valortot = 0;
+            var aux;
             for (var i = 0; i < data.length; i++) {
-                valortot += data[i].valor;
+                aux = Number(data[i].valor);
+                valortot = valortot + aux;
             }
             return valortot;
         });
@@ -67,7 +72,7 @@ exports.default = new class estoqueServise {
             const data = yield (0, readCSV_1.default)(filePath);
             var pesotot = 0;
             for (var i = 0; i < data.length; i++) {
-                pesotot += data[i].peso;
+                pesotot += Number(data[i].peso);
             }
             return pesotot;
         });
@@ -77,7 +82,7 @@ exports.default = new class estoqueServise {
             const data = yield (0, readCSV_1.default)(filePath);
             var valortot = 0;
             for (var i = 0; i < data.length; i++) {
-                valortot += data[i].valor;
+                valortot += Number(data[i].valor);
             }
             return valortot / data.length;
         });
@@ -87,7 +92,7 @@ exports.default = new class estoqueServise {
             const data = yield (0, readCSV_1.default)(filePath);
             var pesotot = 0;
             for (var i = 0; i < data.length; i++) {
-                pesotot += data[i].peso;
+                pesotot += Number(data[i].peso);
             }
             return pesotot / data.length;
         });
@@ -97,7 +102,7 @@ exports.default = new class estoqueServise {
             const data = yield (0, readCSV_1.default)(filePath);
             var itens = 0;
             for (var i = 0; i < data.length; i++) {
-                itens += data[i].quantidade;
+                itens += Number(data[i].quantidade);
             }
             return itens;
         });
