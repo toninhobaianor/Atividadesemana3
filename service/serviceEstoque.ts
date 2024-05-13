@@ -30,7 +30,6 @@ export default new class estoqueServise{
         for(var i = 0;i < data.length;i++){
             if(data[i].nome == nome){
                 const novodata = data.splice(data[i].valor,1);
-                console.log(novodata);
                 await writeCSV(filePath,[novodata[i]]);
             }else{
                 await writeCSV(filePath,[data[i]]);
