@@ -1,6 +1,7 @@
 import  readCSV  from "../Model/readCSV";
 import  writeCSV from "../Model/writeCSV";
 import { Data } from "../Model/interfaceData";
+import { removeCSV } from "../Model/RemoveCSV";
 import fs from 'fs';
 
 const filePath = './Model/estoque.csv'
@@ -26,15 +27,8 @@ export default new class estoqueServise{
     }
 
     async remover(nome: string){
-        const data = await readCSV(filePath);
-        for(var i = 0;i < data.length;i++){
-            if(data[i].nome == nome){
-                const novodata = data.splice(data[i].valor,1);
-                await writeCSV(filePath,[novodata[i]]);
-            }else{
-                await writeCSV(filePath,[data[i]]);
-            }
-        }   
+        const data = await removeCSV(filePath, nome);
+        console.log(data);  
     }
     // não esta funcionando
 
